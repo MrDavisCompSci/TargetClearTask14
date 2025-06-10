@@ -1,0 +1,15 @@
+/workspaces/TargetClear/bin/Debug/net7.0/ConsoleTemplate
+/workspaces/TargetClear/bin/Debug/net7.0/ConsoleTemplate.deps.json
+/workspaces/TargetClear/bin/Debug/net7.0/ConsoleTemplate.runtimeconfig.json
+/workspaces/TargetClear/bin/Debug/net7.0/ConsoleTemplate.dll
+/workspaces/TargetClear/bin/Debug/net7.0/ConsoleTemplate.pdb
+/workspaces/TargetClear/obj/Debug/net7.0/ConsoleTemplate.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/TargetClear/obj/Debug/net7.0/ConsoleTemplate.AssemblyInfoInputs.cache
+/workspaces/TargetClear/obj/Debug/net7.0/ConsoleTemplate.AssemblyInfo.cs
+/workspaces/TargetClear/obj/Debug/net7.0/ConsoleTemplate.csproj.CoreCompileInputs.cache
+/workspaces/TargetClear/obj/Debug/net7.0/ConsoleTemplate.sourcelink.json
+/workspaces/TargetClear/obj/Debug/net7.0/ConsoleTemplate.dll
+/workspaces/TargetClear/obj/Debug/net7.0/refint/ConsoleTemplate.dll
+/workspaces/TargetClear/obj/Debug/net7.0/ConsoleTemplate.pdb
+/workspaces/TargetClear/obj/Debug/net7.0/ConsoleTemplate.genruntimeconfig.cache
+/workspaces/TargetClear/obj/Debug/net7.0/ref/ConsoleTemplate.dll
