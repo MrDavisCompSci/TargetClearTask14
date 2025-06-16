@@ -56,6 +56,12 @@ namespace TargetClearCS
                 DisplayState(Targets, NumbersAllowed, Score);
                 Console.Write("Enter an expression: ");
                 UserInput = Console.ReadLine();
+                
+                // turn any occurrences of "log" to "l"
+                UserInput = UserInput.Replace("log","l");
+                // get rid of spaces
+                UserInput = UserInput.Replace(" ","");
+                
                 Console.WriteLine();
                 if (CheckIfUserInputValid(UserInput))
                 {
@@ -172,7 +178,7 @@ namespace TargetClearCS
         }
         
         static void DisplayState(List<int> Targets, List<int> NumbersAllowed, int Score)
-        {
+        {m
             DisplayTargets(Targets);
             DisplayNumbersAllowed(NumbersAllowed);
             DisplayScore(Score);
@@ -217,10 +223,13 @@ namespace TargetClearCS
         
         static List<string> ConvertToRPN(string UserInput)
         {
+
+
+
             int Position = 0;
             Dictionary<string, int> Precedence = new Dictionary<string, int>
             {
-                { "+", 2 }, { "-", 2 }, { "*", 4 }, { "/", 4 }
+                { "+", 2 }, { "-", 2 }, { "*", 4 }, { "/", 4 }, {"^", 6}, {"l", 6}
             };
             List<string> Operators = new List<string>();
             int Operand = GetNumberFromUserInput(UserInput, ref Position);
@@ -262,7 +271,7 @@ namespace TargetClearCS
             List<string> S = new List<string>();
             while (UserInputInRPN.Count > 0)
             {
-                while (!"+-*/".Contains(UserInputInRPN[0]))
+                while (!"+-*/^l".Contains(UserInputInRPN[0]))
                 {
                     S.Add(UserInputInRPN[0]);
                     UserInputInRPN.RemoveAt(0);
@@ -285,6 +294,12 @@ namespace TargetClearCS
                         break;
                     case "/":
                         Result = Num1 / Num2;
+                        break;
+                    case "^":
+                        Result = Math.Pow(Num1, Num2);
+                        break;
+                    case "l":
+                        Result = Math.Log(Num1, Num2);
                         break;
                 }
                 UserInputInRPN.RemoveAt(0);
@@ -332,7 +347,7 @@ namespace TargetClearCS
         
         static bool CheckIfUserInputValid(string UserInput)
         {
-            return Regex.IsMatch(UserInput, @"^([0-9]+[\+\-\*\/])+[0-9]+$");
+            return Regex.IsMatch(UserInput, @"^([0-9]+[\+\-\*\/\^l])+[0-9]+$");
         }
         
         static int GetTarget(int MaxTarget)
